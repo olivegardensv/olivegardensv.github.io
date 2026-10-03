@@ -1,0 +1,391 @@
+<!doctype html>
+
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Olive Garden Restaurant &amp; Café – Speisekarte</title>
+<style>
+  :root{
+    --olive:#4a5d23; --olive-dark:#2f3d14; --olive-light:#7a8f3f;
+    --cream:#faf6ec; --card:#ffffff; --ink:#2b2b23;
+    --gold:#b98a2f; --hot:#c0392b; --cold:#1f6f8b;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"Georgia","Times New Roman",serif; background:var(--cream); color:var(--ink); line-height:1.5;}
+  .wrap{max-width:960px; margin:0 auto; padding:24px 18px 60px;}
+
+/* HERO */
+.hero{text-align:center; padding:34px 16px 26px; background:linear-gradient(160deg,var(–olive-dark),var(–olive) 60%,var(–olive-light)); border-radius:22px; color:#fff; box-shadow:0 12px 30px rgba(47,61,20,.35);}
+.hero svg.logo{width:110px; height:110px; margin:0 auto 10px; display:block;}
+.hero h1{font-size:34px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;}
+.hero .sub{font-style:italic; opacity:.92; font-size:15px; margin-top:4px;}
+.hero .divider{width:180px; margin:14px auto 0; border-top:1px solid rgba(255,255,255,.5);}
+
+/* SECTION TITLES */
+.section-title{display:flex; align-items:center; gap:14px; margin:42px 0 16px;}
+.section-title h2{font-size:24px; color:var(–olive-dark); text-transform:uppercase; letter-spacing:1px; white-space:nowrap;}
+.section-title .line{flex:1; height:2px; background:var(–gold); border-radius:2px;}
+.section-note{font-size:13px; color:#777; font-style:italic; margin:-8px 0 14px;}
+
+/* ITEM GRID */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px;}
+.card{background:var(–card); border-radius:16px; padding:16px; box-shadow:0 4px 14px rgba(43,43,35,.08); border:1px solid #eee7d4; display:flex; gap:14px; align-items:flex-start;}
+.card .img{flex:0 0 58px; height:58px; border-radius:12px; background:#f1ecd9; display:flex; align-items:center; justify-content:center; font-size:30px;}
+.card .body{flex:1; min-width:0;}
+.card h3{font-size:17px; color:var(–olive-dark);}
+.card .desc{font-size:13px; color:#6d6a5d; margin-top:2px;}
+.card .row{display:flex; justify-content:space-between; align-items:center; margin-top:6px; flex-wrap:wrap; gap:6px;}
+.price{font-weight:700; color:var(–gold); font-size:16px;}
+.badge{font-size:12px; font-family:system-ui, sans-serif; font-weight:700; padding:2px 9px; border-radius:20px; color:#fff;}
+.badge.hot{background:var(–hot);}
+.badge.cold{background:var(–cold);}
+
+/* FOOTER */
+footer{text-align:center; margin-top:44px; color:#9a9584; font-size:13px; font-style:italic;}
+@media (max-width:520px){ .hero h1{font-size:26px;} }
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <svg class="logo" viewBox="0 0 100 100" aria-label="Olive Garden Logo">
+      <defs>
+        <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#e6c878"/>
+          <stop offset="50%" stop-color="#b98a2f"/>
+          <stop offset="100%" stop-color="#8a641f"/>
+        </linearGradient>
+      </defs>
+      <!-- Doppelter goldener Rahmen -->
+      <circle cx="50" cy="50" r="48" fill="none" stroke="url(#gold)" stroke-width="1.4"/>
+      <circle cx="50" cy="50" r="44.5" fill="#faf6ec" stroke="url(#gold)" stroke-width="0.6"/>
+      <!-- Olivenzweig-Kranz (oberer Bogen) -->
+      <g stroke="#4a5d23" stroke-width="1.1" fill="none" stroke-linecap="round">
+        <path d="M17 55 Q 30 24 50 20 Q 70 24 83 55"/>
+        <path d="M83 55 Q 70 24 50 20 Q 30 24 17 55" transform="translate(0 6)" opacity=".6"/>
+      </g>
+      <g fill="#4a5d23">
+        <ellipse cx="26" cy="42" rx="4.6" ry="2" transform="rotate(48 26 42)"/>
+        <ellipse cx="34" cy="34" rx="4.6" ry="2" transform="rotate(38 34 34)"/>
+        <ellipse cx="43" cy="28" rx="4.6" ry="2" transform="rotate(22 43 28)"/>
+        <ellipse cx="57" cy="28" rx="4.6" ry="2" transform="rotate(-22 57 28)"/>
+        <ellipse cx="66" cy="34" rx="4.6" ry="2" transform="rotate(-38 66 34)"/>
+        <ellipse cx="74" cy="42" rx="4.6" ry="2" transform="rotate(-48 74 42)"/>
+      </g>
+      <circle cx="32" cy="48" r="2.6" fill="url(#gold)"/>
+      <circle cx="68" cy="48" r="2.6" fill="url(#gold)"/>
+      <!-- Monogramm -->
+      <text x="50" y="63" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#2f3d14" letter-spacing="1">OG</text>
+      <!-- Goldene Punkte unten -->
+      <circle cx="44" cy="80" r="1.3" fill="url(#gold)"/>
+      <circle cx="50" cy="82" r="1.3" fill="url(#gold)"/>
+      <circle cx="56" cy="80" r="1.3" fill="url(#gold)"/>
+    </svg>
+<h1 style="letter-spacing:3px">OLIVE GARDEN</h1>
+<div class="sub">R E S T A U R A N T &nbsp;&amp;&nbsp; C A F É</div>
+<div class="divider"></div>
+<div class="sub" style="margin-top:12px">Herzlich willkommen – Guten Appetit!</div>
+  </header>
+  <div class="section-title"><h2>🍕 Pide</h2><div class="line"></div></div>
+  <div class="grid">
+<div class="card">
+  <div class="img">🫓</div>
+  <div class="body">
+    <h3>Klassische Art</h3>
+    <div class="desc">Käse</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 16.00</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🥒</div>
+  <div class="body">
+    <h3>Gemüse Art</h3>
+    <div class="desc">Käse, gegrilltes Gemüse</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 18.00</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🧀</div>
+  <div class="body">
+    <h3>Schweizer Art</h3>
+    <div class="desc">Käse, Raclettekäse, Thymian</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 19.50</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🌭</div>
+  <div class="body">
+    <h3>Türkische Art</h3>
+    <div class="desc">Käse, Sucuk</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 19.50</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🌿</div>
+  <div class="body">
+    <h3>Nomaden Art</h3>
+    <div class="desc">Käse, Rucola, Granatapfelsirup, Tulumkäse</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 21.00</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🍖</div>
+  <div class="body">
+    <h3>Kebab Art</h3>
+    <div class="desc">Hähnchenkebab, Käse, Paprika, Zwiebeln mit Sumach</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 22.00</span>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="section-title"><h2>🥣 Saucen</h2><div class="line"></div></div>
+  <div class="grid">
+<div class="card">
+  <div class="img">🍤</div>
+  <div class="body">
+    <h3>Cocktail</h3>
+    <div class="desc">Klassische Cocktailsauce</div>
+    <div class="row">
+      <span class="badge cold">❄️ Kalt</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🥛</div>
+  <div class="body">
+    <h3>Joghurt</h3>
+    <div class="desc">Joghurt-Knoblauch-Sauce</div>
+    <div class="row">
+      <span class="badge cold">❄️ Kalt</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🌶️</div>
+  <div class="body">
+    <h3>Scharfmacher</h3>
+    <div class="desc">Scharfe Sauce – für Liebhaber von Schärfe</div>
+    <div class="row">
+      <span class="badge hot">🔥 Scharf</span>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="section-title"><h2>⭐ Special des Monats</h2><div class="line"></div></div>
+  <div class="grid">
+<div class="card">
+  <div class="img">🍗</div>
+  <div class="body">
+    <h3>Chicken Kebab</h3>
+    <div class="desc">Inklusive Getränk</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 11.50</span>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="section-title"><h2>🎒 Studentenmenü</h2><div class="line"></div></div>
+  <p class="section-note">Alle Studentenmenüs inklusive Getränk.</p>
+  <div class="grid">
+<div class="card">
+  <div class="img">🍔</div>
+  <div class="body">
+    <h3>Burger</h3>
+    <div class="desc">Inklusive Pommes und Getränk</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🫓</div>
+  <div class="body">
+    <h3>Pide Käse</h3>
+    <div class="desc">Pide mit Käse + Getränk</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🍕</div>
+  <div class="body">
+    <h3>Margherita</h3>
+    <div class="desc">Pizza + Getränk</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🥖</div>
+  <div class="body">
+    <h3>Focaccia Käse</h3>
+    <div class="desc">Focaccia mit Käse</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 12.50</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🥙</div>
+  <div class="body">
+    <h3>Fleisch</h3>
+    <div class="desc">Wrap mit Fleisch</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 11.50</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🍕</div>
+  <div class="body">
+    <h3>Pizza Stück</h3>
+    <div class="desc">Pizzastück</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 7.50</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🐔</div>
+  <div class="body">
+    <h3>Pepito Poulet</h3>
+    <div class="desc">Pepito mit Poulet</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 17.50</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🐑</div>
+  <div class="body">
+    <h3>Pepito Lamm</h3>
+    <div class="desc">Pepito mit Lammfleisch</div>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+      <span class="price">CHF 18.50</span>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="section-title"><h2>☕ Getränke</h2><div class="line"></div></div>
+  <p class="section-note">🔥 Warm &nbsp;·&nbsp; ❄️ Kalt</p>
+  <div class="grid">
+<div class="card">
+  <div class="img">🍵</div>
+  <div class="body">
+    <h3>Türkischer Tee</h3>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">☕</div>
+  <div class="body">
+    <h3>Türkischer Kaffee</h3>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">☕</div>
+  <div class="body">
+    <h3>Espresso</h3>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🥛</div>
+  <div class="body">
+    <h3>Cappuccino</h3>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🍫</div>
+  <div class="body">
+    <h3>Heiße Schokolade</h3>
+    <div class="row">
+      <span class="badge hot">🔥 Warm</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🥤</div>
+  <div class="body">
+    <h3>Cola / Fanta / Sprite</h3>
+    <div class="row">
+      <span class="badge cold">❄️ Kalt</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🧊</div>
+  <div class="body">
+    <h3>Ayran</h3>
+    <div class="row">
+      <span class="badge cold">❄️ Kalt</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🍋</div>
+  <div class="body">
+    <h3>Limonade</h3>
+    <div class="row">
+      <span class="badge cold">❄️ Kalt</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">🫖</div>
+  <div class="body">
+    <h3>Eistee</h3>
+    <div class="row">
+      <span class="badge cold">❄️ Kalt</span>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="img">💧</div>
+  <div class="body">
+    <h3>Wasser</h3>
+    <div class="row">
+      <span class="badge cold">❄️ Kalt</span>
+    </div>
+  </div>
+</div>
+  </div>
+  <footer>Olive Garden Restaurant &amp; Café · Wenn Sie hier sind, sind Sie Teil der Familie 🫒</footer>
+</div>
+</body>
+</html>
