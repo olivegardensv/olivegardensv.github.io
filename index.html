@@ -1,93 +1,104 @@
 <!doctype html>
-<html lang="tr">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Olive Garden Restaurant &amp; Cafe – Menü</title>
+<title>Olive Garden Restaurant &amp; Cafe – Speisekarte</title>
 <style>
-:root{--ol:#4a5d23;--od:#2f3d14;--ol2:#7a8f3f;--cr:#faf6ec;--ink:#2b2b23;--gd:#b98a2f;--hot:#c0392b;--cold:#1f6f8b}
+:root{--olive:#4a5d23;--od:#2f3d14;--cr:#f9f5e9;--ink:#2b2b23;--gd:#b98a2f;--hot:#b8452f;--cold:#2b7a8f;--mut:#7a7766}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Georgia,serif;background:var(--cr);color:var(--ink);line-height:1.5}
-.wrap{max-width:960px;margin:0 auto;padding:24px 18px 60px}
-.hero{text-align:center;padding:34px 16px 26px;background:linear-gradient(160deg,var(--od),var(--ol) 60%,var(--ol2));border-radius:22px;color:#fff;box-shadow:0 12px 30px rgba(47,61,20,.35)}
-.logo{width:100px;height:100px;margin:0 auto 10px;display:block;border-radius:50%;background:var(--cr);border:3px solid var(--gd);color:var(--od);font-size:34px;font-weight:700;line-height:94px}
-.hero h1{font-size:32px;letter-spacing:3px;text-transform:uppercase}
-.sub{font-style:italic;opacity:.92;font-size:15px;margin-top:6px}
-.st{display:flex;align-items:center;gap:14px;margin:40px 0 16px}
-.st h2{font-size:22px;color:var(--od);text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
-.st i{flex:1;height:2px;background:var(--gd)}
-.note{font-size:13px;color:#777;font-style:italic;margin:-8px 0 14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
-.card{background:#fff;border-radius:16px;padding:14px;box-shadow:0 4px 14px rgba(43,43,35,.08);border:1px solid #eee7d4;display:flex;gap:12px;align-items:flex-start}
-.img{flex:0 0 54px;height:54px;border-radius:12px;background:#f1ecd9;display:flex;align-items:center;justify-content:center;font-size:28px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:Georgia,"Times New Roman",serif;color:var(--ink);line-height:1.5;background:radial-gradient(circle at 10% 0%,#fffdf6 0,transparent 45%),radial-gradient(circle at 100% 30%,#eef0dc 0,transparent 40%),var(--cr)}
+.wrap{max-width:900px;margin:0 auto;padding:12px 16px 56px}
+.hero{text-align:center;background:linear-gradient(180deg,#fffdf4,#f3f0d8);border:1px solid #e4dcc3;border-radius:24px;box-shadow:0 12px 30px rgba(74,93,35,.15);padding:14px 10px 12px;margin-top:6px}
+.hero svg{width:100%;max-width:520px;height:auto;display:block;margin:0 auto}
+.sub{font-style:italic;color:var(--mut);font-size:15px;margin-top:4px}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:10px 4px;margin:14px -16px 0;padding-left:16px;background:rgba(249,245,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e4dcc3;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;text-decoration:none;font:600 13px system-ui,sans-serif;color:var(--od);background:#fff;border:1px solid #d9d2b6;padding:7px 14px;border-radius:30px}
+nav a:active{background:var(--olive);color:#fff}
+.st{display:flex;align-items:center;gap:14px;margin:40px 0 18px}
+.st h2{font-size:21px;color:var(--od);text-transform:uppercase;letter-spacing:2px;white-space:nowrap;font-weight:600}
+.st i{flex:1;height:1px;background:linear-gradient(90deg,var(--gd),transparent)}
+.note{font-size:13px;color:var(--mut);font-style:italic;margin:-10px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.card{position:relative;background:#fff;border-radius:18px;padding:14px 14px 14px 18px;box-shadow:0 2px 4px rgba(43,43,35,.05),0 10px 24px rgba(74,93,35,.08);border:1px solid #ece5cc;display:flex;gap:14px;align-items:center;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--olive),var(--gd))}
+.img{flex:0 0 56px;height:56px;border-radius:50%;background:radial-gradient(circle,#fff,#f0ebd6);border:1px solid #e4dcc3;display:flex;align-items:center;justify-content:center;font-size:28px}
 .body{flex:1;min-width:0}
-h3{font-size:17px;color:var(--od)}
-.d{font-size:13px;color:#6d6a5d}
-.r{display:flex;justify-content:space-between;align-items:center;margin-top:6px;flex-wrap:wrap;gap:6px}
-.p{font-weight:700;color:var(--gd);font-size:16px}
-.b{font:700 12px system-ui,sans-serif;padding:2px 9px;border-radius:20px;color:#fff;font-style:normal}
-.h{background:var(--hot)}.c{background:var(--cold)}
-footer{text-align:center;margin-top:44px;color:#9a9584;font-size:13px;font-style:italic}
+h3{font-size:17px;color:var(--od);font-weight:600;line-height:1.25}
+.d{font-size:13px;color:var(--mut);margin-top:2px;font-style:italic}
+.r{display:flex;justify-content:space-between;align-items:center;margin-top:8px;flex-wrap:wrap;gap:6px}
+.p{font:700 14px system-ui,sans-serif;color:#fff;background:var(--olive);padding:4px 11px;border-radius:20px;letter-spacing:.3px}
+.b{font:600 11.5px system-ui,sans-serif;padding:3px 10px;border-radius:20px;border:1px solid}
+.h{color:var(--hot);border-color:#e8c4bb;background:#fdf1ee}
+.c{color:var(--cold);border-color:#bcdbe4;background:#eef7fa}
+footer{text-align:center;margin-top:50px;color:var(--mut);font-size:13px;font-style:italic;padding-top:22px;border-top:1px solid #e4dcc3}
 </style>
 </head>
 <body>
 <div class="wrap">
-
 <header class="hero">
-<div class="logo">OG</div>
-<h1>Olive Garden</h1>
-<div class="sub">RESTAURANT &amp; CAFÉ</div>
-<div class="sub">Hoş geldiniz – Afiyet olsun!</div>
+<svg viewBox="0 0 520 254" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Olive Garden Restaurant &amp; Cafe">
+<defs><g id="s"><path d="M0 0Q3-35 0-74" stroke="#4a6a22" stroke-width="2" fill="none"/><ellipse cx="-11" cy="0" rx="11" ry="3.6" fill="#5d9a2b" transform="translate(0 -10) rotate(55)"/><ellipse cx="11" cy="0" rx="11" ry="3.6" fill="#3f7d22" transform="translate(0 -10) rotate(-55)"/><ellipse cx="-11" cy="0" rx="11" ry="3.6" fill="#86ad3a" transform="translate(0 -22) rotate(52)"/><ellipse cx="11" cy="0" rx="11" ry="3.6" fill="#4b8a26" transform="translate(0 -22) rotate(-52)"/><ellipse cx="-11" cy="0" rx="11" ry="3.6" fill="#5d9a2b" transform="translate(0 -34) rotate(49)"/><ellipse cx="11" cy="0" rx="11" ry="3.6" fill="#3f7d22" transform="translate(0 -34) rotate(-49)"/><ellipse cx="-11" cy="0" rx="11" ry="3.6" fill="#86ad3a" transform="translate(0 -46) rotate(46)"/><ellipse cx="11" cy="0" rx="11" ry="3.6" fill="#4b8a26" transform="translate(0 -46) rotate(-46)"/><ellipse cx="-11" cy="0" rx="11" ry="3.6" fill="#5d9a2b" transform="translate(0 -58) rotate(43)"/><ellipse cx="11" cy="0" rx="11" ry="3.6" fill="#3f7d22" transform="translate(0 -58) rotate(-43)"/><ellipse cx="-11" cy="0" rx="11" ry="3.6" fill="#86ad3a" transform="translate(0 -68) rotate(40)"/><ellipse cx="11" cy="0" rx="11" ry="3.6" fill="#4b8a26" transform="translate(0 -68) rotate(-40)"/><ellipse cx="0" cy="-78" rx="3.5" ry="9" fill="#5d9a2b"/><circle cx="-9" cy="-30" r="4" fill="#33521a"/><circle cx="10" cy="-44" r="4" fill="#8aa82c"/><circle cx="-10" cy="-56" r="4" fill="#8aa82c"/><circle cx="9" cy="-18" r="4" fill="#33521a"/></g></defs>
+<g transform="translate(260 92)"><use href="#s"/><use href="#s" transform="rotate(-40)"/><use href="#s" transform="rotate(40)"/><use href="#s" transform="rotate(-75) scale(.75)"/><use href="#s" transform="rotate(75) scale(.75)"/></g>
+<g transform="translate(260 164) scale(1 -1)"><use href="#s"/><use href="#s" transform="rotate(-40)"/><use href="#s" transform="rotate(40)"/><use href="#s" transform="rotate(-75) scale(.75)"/><use href="#s" transform="rotate(75) scale(.75)"/></g>
+<g stroke="#5b6650" stroke-width="1.6"><path d="M40 96H480"/><path d="M110 160H410"/></g>
+<text x="260" y="136" text-anchor="middle" font-family="Georgia,serif" font-size="46" letter-spacing="2" fill="#4e5a3f">OLIVE GARDEN</text>
+<text x="260" y="154" text-anchor="middle" font-family="Georgia,serif" font-size="14" letter-spacing="3" fill="#4e5a3f">RESTAURANT &amp; CAFE</text>
+</svg>
+<div class="sub">Herzlich willkommen – En Guete!</div>
 </header>
+<nav><a href="#pide">🍕 Pide</a><a href="#saucen">🥣 Saucen</a><a href="#special">⭐ Menü des Monats</a><a href="#student">🎒 Studentenmenü</a><a href="#drinks">☕ Getränke</a></nav>
 
-<div class="st"><h2>🍕 Pide</h2><i></i></div>
+<div class="st" id="pide"><h2>🍕 Pide</h2><i></i></div>
 <div class="grid">
-<div class="card"><div class="img">🫓</div><div class="body"><h3>Klasik-Style</h3><div class="d">Käse (peynir)</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 16.00</span></div></div></div>
-<div class="card"><div class="img">🥒</div><div class="body"><h3>Vegetable-Style</h3><div class="d">Käse, ızgara sebze</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 18.00</span></div></div></div>
-<div class="card"><div class="img">🧀</div><div class="body"><h3>Swiss-Style</h3><div class="d">Käse, raclette peyniri, kekik otu</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 19.50</span></div></div></div>
-<div class="card"><div class="img">🌭</div><div class="body"><h3>Turkey-Style</h3><div class="d">Käse, sucuk</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 19.50</span></div></div></div>
-<div class="card"><div class="img">🌿</div><div class="body"><h3>Nomad-Style</h3><div class="d">Käse, roka, nar ekşisi, tulum peyniri</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 21.00</span></div></div></div>
-<div class="card"><div class="img">🍖</div><div class="body"><h3>Kebap-Style</h3><div class="d">Tavuk kebap, käse, biber, sumaklı soğan</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 22.00</span></div></div></div>
+<div class="card"><div class="img">🫓</div><div class="body"><h3>Klassik-Style</h3><div class="d">Käse</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 16.00</span></div></div></div>
+<div class="card"><div class="img">🥒</div><div class="body"><h3>Vegetable-Style</h3><div class="d">Käse, gegrilltes Gemüse</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 18.00</span></div></div></div>
+<div class="card"><div class="img">🧀</div><div class="body"><h3>Swiss-Style</h3><div class="d">Käse, Raclettekäse, Thymian</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 19.50</span></div></div></div>
+<div class="card"><div class="img">🌭</div><div class="body"><h3>Turkey-Style</h3><div class="d">Käse, Sucuk (türkische Knoblauchwurst)</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 19.50</span></div></div></div>
+<div class="card"><div class="img">🌿</div><div class="body"><h3>Nomad-Style</h3><div class="d">Käse, Rucola, Granatapfelsirup, Tulum-Käse</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 21.00</span></div></div></div>
+<div class="card"><div class="img">🍖</div><div class="body"><h3>Kebap-Style</h3><div class="d">Poulet-Kebap, Käse, Peperoni, Zwiebeln mit Sumach</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 22.00</span></div></div></div>
 </div>
 
-<div class="st"><h2>🥣 Soslar</h2><i></i></div>
+<div class="st" id="saucen"><h2>🥣 Saucen</h2><i></i></div>
 <div class="grid">
-<div class="card"><div class="img">🍤</div><div class="body"><h3>Cocktail</h3><div class="d">Klasik kokteyl sosu</div><div class="r"><span class="b c">❄️ Soğuk</span></div></div></div>
-<div class="card"><div class="img">🥛</div><div class="body"><h3>Joghurt</h3><div class="d">Yoğurtlu sos, sarımsak</div><div class="r"><span class="b c">❄️ Soğuk</span></div></div></div>
-<div class="card"><div class="img">🌶️</div><div class="body"><h3>Scharfmacher</h3><div class="d">Acı sos</div><div class="r"><span class="b h">🔥 Acı</span></div></div></div>
+<div class="card"><div class="img">🍤</div><div class="body"><h3>Cocktail</h3><div class="d">Klassische Cocktailsauce</div><div class="r"><span class="b c">❄️ Kalt</span></div></div></div>
+<div class="card"><div class="img">🥛</div><div class="body"><h3>Joghurt</h3><div class="d">Joghurtsauce mit Knoblauch</div><div class="r"><span class="b c">❄️ Kalt</span></div></div></div>
+<div class="card"><div class="img">🌶️</div><div class="body"><h3>Scharfmacher</h3><div class="d">Scharfe Sauce für Liebhaber</div><div class="r"><span class="b h">🔥 Warm</span></div></div></div>
 </div>
 
-<div class="st"><h2>⭐ Ayın Speciali</h2><i></i></div>
+<div class="st" id="special"><h2>⭐ Menü des Monats</h2><i></i></div>
 <div class="grid">
-<div class="card"><div class="img">🍗</div><div class="body"><h3>Chicken Kebap</h3><div class="d">İçecek dahil</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 11.50</span></div></div></div>
+<div class="card"><div class="img">🍗</div><div class="body"><h3>Chicken Kebap</h3><div class="d">Getränk inklusive</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 11.50</span></div></div></div>
 </div>
 
-<div class="st"><h2>🎒 Öğrenci Menüsü</h2><i></i></div>
-<p class="note">Tüm öğrenci menüleri içecek dahildir.</p>
+<div class="st" id="student"><h2>🎒 Studentenmenü</h2><i></i></div>
+<p class="note">Alle Studentenmenüs inklusive Getränk.</p>
 <div class="grid">
-<div class="card"><div class="img">🍔</div><div class="body"><h3>Burger</h3><div class="d">Patates ve içecek dahil</div><div class="r"><span class="b h">🔥 Sıcak</span></div></div></div>
-<div class="card"><div class="img">🫓</div><div class="body"><h3>Pide Käse</h3><div class="d">Peynirli pide + içecek</div><div class="r"><span class="b h">🔥 Sıcak</span></div></div></div>
-<div class="card"><div class="img">🍕</div><div class="body"><h3>Margherita</h3><div class="d">Pizza + içecek</div><div class="r"><span class="b h">🔥 Sıcak</span></div></div></div>
-<div class="card"><div class="img">🥖</div><div class="body"><h3>Focaccia Käse</h3><div class="d">Peynirli focaccia</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 12.50</span></div></div></div>
-<div class="card"><div class="img">🥙</div><div class="body"><h3>Fleisch</h3><div class="d">Etli wrap</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 11.50</span></div></div></div>
-<div class="card"><div class="img">🍕</div><div class="body"><h3>Pizza Stück</h3><div class="d">Dilim pizza</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 7.50</span></div></div></div>
-<div class="card"><div class="img">🐔</div><div class="body"><h3>Pepito Poulet</h3><div class="d">Tavuklu pepito</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 17.50</span></div></div></div>
-<div class="card"><div class="img">🐑</div><div class="body"><h3>Pepito Lamm</h3><div class="d">Kuzulu pepito</div><div class="r"><span class="b h">🔥 Sıcak</span><span class="p">CHF 18.50</span></div></div></div>
+<div class="card"><div class="img">🍔</div><div class="body"><h3>Burger</h3><div class="d">Pommes und Getränk inklusive</div><div class="r"><span class="b h">🔥 Warm</span></div></div></div>
+<div class="card"><div class="img">🫓</div><div class="body"><h3>Pide Käse</h3><div class="d">Pide mit Käse + Getränk</div><div class="r"><span class="b h">🔥 Warm</span></div></div></div>
+<div class="card"><div class="img">🍕</div><div class="body"><h3>Margherita</h3><div class="d">Pizza + Getränk</div><div class="r"><span class="b h">🔥 Warm</span></div></div></div>
+<div class="card"><div class="img">🥖</div><div class="body"><h3>Focaccia Käse</h3><div class="d">Focaccia mit Käse</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 12.50</span></div></div></div>
+<div class="card"><div class="img">🥙</div><div class="body"><h3>Fleisch</h3><div class="d">Wrap mit Fleisch</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 11.50</span></div></div></div>
+<div class="card"><div class="img">🍕</div><div class="body"><h3>Pizza Stück</h3><div class="d">Pizzastück</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 7.50</span></div></div></div>
+<div class="card"><div class="img">🐔</div><div class="body"><h3>Pepito Poulet</h3><div class="d">Pepito mit Poulet</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 17.50</span></div></div></div>
+<div class="card"><div class="img">🐑</div><div class="body"><h3>Pepito Lamm</h3><div class="d">Pepito mit Lamm</div><div class="r"><span class="b h">🔥 Warm</span><span class="p">CHF 18.50</span></div></div></div>
 </div>
 
-<div class="st"><h2>☕ İçecekler</h2><i></i></div>
-<p class="note">🔥 Sıcak · ❄️ Soğuk</p>
+<div class="st" id="drinks"><h2>☕ Getränke</h2><i></i></div>
+<p class="note">🔥 Warm · ❄️ Kalt</p>
 <div class="grid">
-<div class="card"><div class="img">🍵</div><div class="body"><h3>Türk Çayı</h3><div class="r"><span class="b h">🔥 Sıcak</span></div></div></div>
-<div class="card"><div class="img">☕</div><div class="body"><h3>Türk Kahvesi</h3><div class="r"><span class="b h">🔥 Sıcak</span></div></div></div>
-<div class="card"><div class="img">☕</div><div class="body"><h3>Espresso</h3><div class="r"><span class="b h">🔥 Sıcak</span></div></div></div>
-<div class="card"><div class="img">🥛</div><div class="body"><h3>Cappuccino</h3><div class="r"><span class="b h">🔥 Sıcak</span></div></div></div>
-<div class="card"><div class="img">🍫</div><div class="body"><h3>Sıcak Çikolata</h3><div class="r"><span class="b h">🔥 Sıcak</span></div></div></div>
-<div class="card"><div class="img">🥤</div><div class="body"><h3>Cola / Fanta / Sprite</h3><div class="r"><span class="b c">❄️ Soğuk</span></div></div></div>
-<div class="card"><div class="img">🧊</div><div class="body"><h3>Ayran</h3><div class="r"><span class="b c">❄️ Soğuk</span></div></div></div>
-<div class="card"><div class="img">🍋</div><div class="body"><h3>Limonata</h3><div class="r"><span class="b c">❄️ Soğuk</span></div></div></div>
-<div class="card"><div class="img">🫖</div><div class="body"><h3>Ice Tea</h3><div class="r"><span class="b c">❄️ Soğuk</span></div></div></div>
-<div class="card"><div class="img">💧</div><div class="body"><h3>Su</h3><div class="r"><span class="b c">❄️ Soğuk</span></div></div></div>
+<div class="card"><div class="img">🍵</div><div class="body"><h3>Türkischer Tee</h3><div class="r"><span class="b h">🔥 Warm</span></div></div></div>
+<div class="card"><div class="img">☕</div><div class="body"><h3>Türkischer Kaffee</h3><div class="r"><span class="b h">🔥 Warm</span></div></div></div>
+<div class="card"><div class="img">☕</div><div class="body"><h3>Espresso</h3><div class="r"><span class="b h">🔥 Warm</span></div></div></div>
+<div class="card"><div class="img">🥛</div><div class="body"><h3>Cappuccino</h3><div class="r"><span class="b h">🔥 Warm</span></div></div></div>
+<div class="card"><div class="img">🍫</div><div class="body"><h3>Heisse Schokolade</h3><div class="r"><span class="b h">🔥 Warm</span></div></div></div>
+<div class="card"><div class="img">🥤</div><div class="body"><h3>Cola / Fanta / Sprite</h3><div class="r"><span class="b c">❄️ Kalt</span></div></div></div>
+<div class="card"><div class="img">🧊</div><div class="body"><h3>Ayran</h3><div class="r"><span class="b c">❄️ Kalt</span></div></div></div>
+<div class="card"><div class="img">🍋</div><div class="body"><h3>Limonade</h3><div class="r"><span class="b c">❄️ Kalt</span></div></div></div>
+<div class="card"><div class="img">🫖</div><div class="body"><h3>Ice Tea</h3><div class="r"><span class="b c">❄️ Kalt</span></div></div></div>
+<div class="card"><div class="img">💧</div><div class="body"><h3>Wasser</h3><div class="r"><span class="b c">❄️ Kalt</span></div></div></div>
 </div>
 
 <footer>Olive Garden Restaurant &amp; Cafe · When you're here, you're family 🫒</footer>
