@@ -1,122 +1,160 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Olive Garden Restaurant &amp; Cafe – Speisekarte</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menükarte</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Source+Serif+4:wght@400;600&family=Dancing+Script:wght@600&display=swap">
 <style>
-:root{--olive:#4a5d23;--olive-dark:#2f3d14;--olive-light:#7a8f3f;--cream:#faf6ec;--card:#ffffff;--ink:#2b2b23;--gold:#b98a2f;--hot:#c0392b;--cold:#1f6f8b}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Georgia,"Times New Roman",serif;background:var(--cream);color:var(--ink);line-height:1.5}
-.wrap{max-width:960px;margin:0 auto;padding:24px 18px 60px}
-.hero{text-align:center;padding:34px 16px 26px;background:linear-gradient(160deg,var(--olive-dark),var(--olive) 60%,var(--olive-light));border-radius:22px;color:#fff;box-shadow:0 12px 30px rgba(47,61,20,.35)}
-.hero svg.logo{width:110px;height:110px;margin:0 auto 10px;display:block}
-.hero h1{font-size:34px;letter-spacing:3px;text-transform:uppercase;font-weight:700}
-.hero .sub{font-style:italic;opacity:.92;font-size:15px;margin-top:4px}
-.hero .divider{width:180px;margin:14px auto 0;border-top:1px solid rgba(255,255,255,.5)}
-.section-title{display:flex;align-items:center;gap:14px;margin:42px 0 16px}
-.section-title h2{font-size:24px;color:var(--olive-dark);text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
-.section-title .line{flex:1;height:2px;background:var(--gold);border-radius:2px}
-.section-note{font-size:13px;color:#777;font-style:italic;margin:-8px 0 14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-.card{background:var(--card);border-radius:16px;padding:16px;box-shadow:0 4px 14px rgba(43,43,35,.08);border:1px solid #eee7d4;display:flex;gap:14px;align-items:flex-start}
-.card .img{flex:0 0 58px;height:58px;border-radius:12px;background:#f1ecd9;display:flex;align-items:center;justify-content:center;font-size:30px}
-.card .body{flex:1;min-width:0}
-.card h3{font-size:17px;color:var(--olive-dark)}
-.card .desc{font-size:13px;color:#6d6a5d;margin-top:2px}
-.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:6px;flex-wrap:wrap;gap:6px}
-.price{font-weight:700;color:var(--gold);font-size:16px}
-.badge{font-size:12px;font-family:system-ui,sans-serif;font-weight:700;padding:2px 9px;border-radius:20px;color:#fff}
-.badge.hot{background:var(--hot)}
-.badge.cold{background:var(--cold)}
-footer{text-align:center;margin-top:44px;color:#9a9584;font-size:13px;font-style:italic}
-@media (max-width:520px){.hero h1{font-size:26px}}
+:root{--bg:#efe9d8;--ink:#2a3220;--mut:#5f6650;--ol:#2f4a1c;--ol2:#6f7d3f;--ln:#c9c3b0;--card:#e8e1cc;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#181e13;--ink:#ebe5d2;--mut:#a3aa8f;--ol:#b8cf88;--ol2:#8fa05a;--ln:#38422d;--card:#202818}}
+:root[data-theme="dark"]{--bg:#181e13;--ink:#ebe5d2;--mut:#a3aa8f;--ol:#b8cf88;--ol2:#8fa05a;--ln:#38422d;--card:#202818}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.45 "Source Serif 4",Georgia,serif}
+main{max-width:640px;margin:0 auto;padding:0 20px 56px;position:relative}
+header{text-align:center;padding:44px 0 18px;position:relative}
+.corner{position:absolute;left:-26px;top:-6px;width:170px;height:64px;color:var(--ol2);transform:rotate(18deg);opacity:.9}
+h1,h2{font-family:"Playfair Display",Georgia,serif;font-weight:800;color:var(--ol);letter-spacing:.06em;text-transform:uppercase;margin:0;text-align:center}
+h1{font-size:2.3rem;line-height:1.1}
+header p{margin:8px 0 0;color:var(--mut);font-style:italic}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--ln);margin:0 -20px;padding:10px 20px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav a{flex:none;color:var(--ol);text-decoration:none;font-weight:600;font-size:.9rem;padding:6px 13px;border:1px solid var(--ln);border-radius:20px}
+nav a.on{background:var(--ol);color:var(--bg);border-color:var(--ol)}
+nav a:focus-visible{outline:2px solid var(--ol);outline-offset:2px}
+section{padding-top:34px}
+h2{font-size:1.6rem;letter-spacing:.08em}
+.rule{display:flex;align-items:center;gap:10px;margin:8px 0 12px;color:var(--ol2)}
+.rule:before,.rule:after{content:"";flex:1;height:1px;background:var(--ol);opacity:.55}
+.rule svg{width:54px;height:20px}
+.note{text-align:center;color:var(--mut);margin:0 0 6px;font-size:.95rem}
+.it{display:grid;grid-template-columns:1fr auto 3.6rem;gap:10px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--ln)}
+.it b{font-weight:400;font-size:1.05rem;display:block}
+.it small{display:block;color:var(--mut);font-size:.82rem;line-height:1.35;margin-top:2px}
+.m{color:var(--mut);font-size:.88rem;white-space:nowrap}
+.p{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.deal{margin-top:30px;background:var(--card);border-radius:6px;padding:20px 18px;display:flex;align-items:center;gap:16px;border:1px solid var(--ln)}
+.deal h3{margin:0;font:600 2.1rem/1 "Dancing Script",cursive;color:var(--ol)}
+.deal p{margin:6px 0 0;color:var(--mut)}
+.badge{flex:none;width:92px;height:92px;border-radius:50%;background:var(--ol);color:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Playfair Display",Georgia,serif;font-weight:800;font-size:1.5rem;line-height:1}
+.badge span{font:600 .75rem "Source Serif 4",Georgia,serif;margin-top:4px;letter-spacing:.1em}
+footer{text-align:center;color:var(--ol2);padding-top:40px}
+footer svg{width:70px;height:26px}
+footer p{margin:6px 0 0;font-size:.8rem;color:var(--mut)}
 </style>
 </head>
 <body>
-<div class="wrap">
-
-<header class="hero">
-<svg class="logo" viewBox="0 0 100 100" aria-label="Olive Garden Logo">
-<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e6c878"/><stop offset="50%" stop-color="#b98a2f"/><stop offset="100%" stop-color="#8a641f"/></linearGradient></defs>
-<circle cx="50" cy="50" r="48" fill="none" stroke="url(#gold)" stroke-width="1.4"/>
-<circle cx="50" cy="50" r="44.5" fill="#faf6ec" stroke="url(#gold)" stroke-width="0.6"/>
-<g stroke="#4a5d23" stroke-width="1.1" fill="none" stroke-linecap="round">
-<path d="M17 55 Q 30 24 50 20 Q 70 24 83 55"/>
-<path d="M83 55 Q 70 24 50 20 Q 30 24 17 55" transform="translate(0 6)" opacity=".6"/>
-</g>
-<g fill="#4a5d23">
-<ellipse cx="26" cy="42" rx="4.6" ry="2" transform="rotate(48 26 42)"/>
-<ellipse cx="34" cy="34" rx="4.6" ry="2" transform="rotate(38 34 34)"/>
-<ellipse cx="43" cy="28" rx="4.6" ry="2" transform="rotate(22 43 28)"/>
-<ellipse cx="57" cy="28" rx="4.6" ry="2" transform="rotate(-22 57 28)"/>
-<ellipse cx="66" cy="34" rx="4.6" ry="2" transform="rotate(-38 66 34)"/>
-<ellipse cx="74" cy="42" rx="4.6" ry="2" transform="rotate(-48 74 42)"/>
-</g>
-<circle cx="32" cy="48" r="2.6" fill="url(#gold)"/>
-<circle cx="68" cy="48" r="2.6" fill="url(#gold)"/>
-<text x="50" y="63" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#2f3d14" letter-spacing="1">OG</text>
-<circle cx="44" cy="80" r="1.3" fill="url(#gold)"/>
-<circle cx="50" cy="82" r="1.3" fill="url(#gold)"/>
-<circle cx="56" cy="80" r="1.3" fill="url(#gold)"/>
-</svg>
-<h1>OLIVE GARDEN</h1>
-<div class="sub">R E S T A U R A N T &nbsp;&amp;&nbsp; C A F É</div>
-<div class="divider"></div>
-<div class="sub" style="margin-top:12px">Herzlich willkommen – En Guete!</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ol" viewBox="0 0 80 30"><path d="M3 23C25 21 50 15 77 8" fill="none" stroke="currentColor" stroke-width="1.3"/><g fill="currentColor"><ellipse cx="18" cy="15" rx="9" ry="3" transform="rotate(-30 18 15)"/><ellipse cx="32" cy="26" rx="9" ry="3" transform="rotate(25 32 26)"/><ellipse cx="47" cy="9" rx="9" ry="3" transform="rotate(-25 47 9)"/><ellipse cx="60" cy="20" rx="8" ry="2.8" transform="rotate(20 60 20)"/><ellipse cx="72" cy="4" rx="7" ry="2.5" transform="rotate(-20 72 4)"/></g><ellipse cx="41" cy="21" rx="3.4" ry="4.6" fill="var(--ol)"/><ellipse cx="54" cy="14" rx="3.2" ry="4.4" fill="var(--ol)"/></symbol></svg>
+<main>
+<header>
+<svg class="corner" aria-hidden="true"><use href="#ol"/></svg>
+<h1>Menükarte</h1>
+<p>Speisen &amp; Getränke · Preise in CHF</p>
 </header>
-
-<div class="section-title"><h2>🍕 Pide</h2><div class="line"></div></div>
-<div class="grid">
-<div class="card"><div class="img">🫓</div><div class="body"><h3>Klassik-Style</h3><div class="desc">Käse</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 16.00</span></div></div></div>
-<div class="card"><div class="img">🥒</div><div class="body"><h3>Vegetable-Style</h3><div class="desc">Käse, gegrilltes Gemüse</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 18.00</span></div></div></div>
-<div class="card"><div class="img">🧀</div><div class="body"><h3>Swiss-Style</h3><div class="desc">Käse, Raclettekäse, Thymian</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 19.50</span></div></div></div>
-<div class="card"><div class="img">🌭</div><div class="body"><h3>Turkey-Style</h3><div class="desc">Käse, Sucuk (türkische Knoblauchwurst)</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 19.50</span></div></div></div>
-<div class="card"><div class="img">🌿</div><div class="body"><h3>Nomad-Style</h3><div class="desc">Käse, Rucola, Granatapfelsirup, Tulum-Käse</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 21.00</span></div></div></div>
-<div class="card"><div class="img">🍖</div><div class="body"><h3>Kebap-Style</h3><div class="desc">Poulet-Kebap, Käse, Peperoni, Zwiebeln mit Sumach</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 22.00</span></div></div></div>
+<nav id="nav" aria-label="Kategorien"></nav>
+<div class="deal">
+<div class="badge">23.50<span>CHF</span></div>
+<div><h3>Beirut-Salat</h3><p>+ Valser Prickelnd 33 cl</p></div>
 </div>
-
-<div class="section-title"><h2>🥣 Saucen</h2><div class="line"></div></div>
-<div class="grid">
-<div class="card"><div class="img">🍤</div><div class="body"><h3>Cocktail</h3><div class="desc">Klassische Cocktailsauce</div><div class="row"><span class="badge cold">❄️ Kalt</span></div></div></div>
-<div class="card"><div class="img">🥛</div><div class="body"><h3>Joghurt</h3><div class="desc">Joghurtsauce mit Knoblauch</div><div class="row"><span class="badge cold">❄️ Kalt</span></div></div></div>
-<div class="card"><div class="img">🌶️</div><div class="body"><h3>Scharfmacher</h3><div class="desc">Scharfe Sauce für Liebhaber</div><div class="row"><span class="badge hot">🔥 Scharf</span></div></div></div>
-</div>
-
-<div class="section-title"><h2>⭐ Menü des Monats</h2><div class="line"></div></div>
-<div class="grid">
-<div class="card"><div class="img">🍗</div><div class="body"><h3>Chicken Kebap</h3><div class="desc">Getränk inklusive</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 11.50</span></div></div></div>
-</div>
-
-<div class="section-title"><h2>🎒 Studentenmenü</h2><div class="line"></div></div>
-<p class="section-note">Alle Studentenmenüs inklusive Getränk.</p>
-<div class="grid">
-<div class="card"><div class="img">🍔</div><div class="body"><h3>Burger</h3><div class="desc">Pommes und Getränk inklusive</div><div class="row"><span class="badge hot">🔥 Warm</span></div></div></div>
-<div class="card"><div class="img">🫓</div><div class="body"><h3>Pide Käse</h3><div class="desc">Pide mit Käse + Getränk</div><div class="row"><span class="badge hot">🔥 Warm</span></div></div></div>
-<div class="card"><div class="img">🍕</div><div class="body"><h3>Margherita</h3><div class="desc">Pizza + Getränk</div><div class="row"><span class="badge hot">🔥 Warm</span></div></div></div>
-<div class="card"><div class="img">🥖</div><div class="body"><h3>Focaccia Käse</h3><div class="desc">Focaccia mit Käse</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 12.50</span></div></div></div>
-<div class="card"><div class="img">🥙</div><div class="body"><h3>Fleisch</h3><div class="desc">Wrap mit Fleisch</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 11.50</span></div></div></div>
-<div class="card"><div class="img">🍕</div><div class="body"><h3>Pizza Stück</h3><div class="desc">Pizzastück</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 7.50</span></div></div></div>
-<div class="card"><div class="img">🐔</div><div class="body"><h3>Pepito Poulet</h3><div class="desc">Pepito mit Poulet</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 17.50</span></div></div></div>
-<div class="card"><div class="img">🐑</div><div class="body"><h3>Pepito Lamm</h3><div class="desc">Pepito mit Lamm</div><div class="row"><span class="badge hot">🔥 Warm</span><span class="price">CHF 18.50</span></div></div></div>
-</div>
-
-<div class="section-title"><h2>☕ Getränke</h2><div class="line"></div></div>
-<p class="section-note">🔥 Warm &nbsp;·&nbsp; ❄️ Kalt</p>
-<div class="grid">
-<div class="card"><div class="img">🍵</div><div class="body"><h3>Türkischer Tee</h3><div class="row"><span class="badge hot">🔥 Warm</span></div></div></div>
-<div class="card"><div class="img">☕</div><div class="body"><h3>Türkischer Kaffee</h3><div class="row"><span class="badge hot">🔥 Warm</span></div></div></div>
-<div class="card"><div class="img">☕</div><div class="body"><h3>Espresso</h3><div class="row"><span class="badge hot">🔥 Warm</span></div></div></div>
-<div class="card"><div class="img">🥛</div><div class="body"><h3>Cappuccino</h3><div class="row"><span class="badge hot">🔥 Warm</span></div></div></div>
-<div class="card"><div class="img">🍫</div><div class="body"><h3>Heisse Schokolade</h3><div class="row"><span class="badge hot">🔥 Warm</span></div></div></div>
-<div class="card"><div class="img">🥤</div><div class="body"><h3>Cola / Fanta / Sprite</h3><div class="row"><span class="badge cold">❄️ Kalt</span></div></div></div>
-<div class="card"><div class="img">🧊</div><div class="body"><h3>Ayran</h3><div class="row"><span class="badge cold">❄️ Kalt</span></div></div></div>
-<div class="card"><div class="img">🍋</div><div class="body"><h3>Limonade</h3><div class="row"><span class="badge cold">❄️ Kalt</span></div></div></div>
-<div class="card"><div class="img">🫖</div><div class="body"><h3>Ice Tea</h3><div class="row"><span class="badge cold">❄️ Kalt</span></div></div></div>
-<div class="card"><div class="img">💧</div><div class="body"><h3>Wasser</h3><div class="row"><span class="badge cold">❄️ Kalt</span></div></div></div>
-</div>
-
-<footer>Olive Garden Restaurant &amp; Cafe · When you're here, you're family 🫒</footer>
-</div>
+<div id="app"></div>
+<footer><svg aria-hidden="true"><use href="#ol"/></svg><p>Alle Preise in CHF</p></footer>
+</main>
+<script>
+const S=[
+["vorspeisen","Vorspeisen","",`Bruschetta «Brunello»|4 Stück, Ciabatta, Tomatenwürfel, Knoblauch, Zwiebeln, Olivenöl||14.50
+Flammkuchen|Crème fraîche, Zwiebeln, Speck||16.50
+Knoblauchbrot|mit Beilage (Raclette/Wienerli/Salami/Schinken)||17.50
+Tomatensuppe|||10.50`],
+["salate","Salate","",`Grüner Salat|||9.50
+Beirut|Falafel, grüner Salat, Peperoni, Joghurtsauce, Rüebli, Kabis, Mais, Tomaten||18.00
+Akropolis|Blattsalat, Orangen, Feta, Pfefferminze, Pinienkerne, Olivenöl-Zitronen-Dressing||18.00
+Mexico|Blattsalat, Avocado, Peperoni, Bohnen, Olivenöl-Zitronen-Dressing||18.50
+Capri|Tomaten, Mozzarella, Olivenöl-Balsamico-Dressing||18.50
+Nüsslisalat|Speck, Ei, Croutons||18.50
+Rucolasalat|Pilze, Parmesansplitter||18.50
+Istanbul|Tomaten, Gurken, Zwiebeln, Oliven, Paprika, Feta, Olivenöl-Zitronen-Dressing||19.00`],
+["snacks","Snacks","",`Chicken Wings mit Pommes frites oder Salat|||19.00
+Chicken Nuggets mit Pommes frites oder Salat|||19.00
+Pommes frites klein|||6.50
+Pommes frites gross|||8.00`],
+["fitness","Fitness-Teller","grilliertes Gemüse, Pommes frites, Sauce nach Wahl",`Fitness-Teller mit Lamm|||22.00
+Fitness-Teller mit Poulet|||21.00`],
+["pizza","Pizza","ø 30 cm inkl. Tomaten, Mozzarella, Oregano",`Margherita|||16.00
+Oregionzola|||17.00
+Prosciutto|Hinterkochschinken||18.50
+Vegetariana|Gemüse||19.00
+Diavola|Peperoncino, Zwiebeln, Knoblauch, scharfe Salami||22.00
+Prosciutto & Funghi|Hinterkochschinken, Champignons||22.00
+Rustica|Pilze, Zwiebeln, Speck, Ei||22.00
+Hawaii|Schinken, Ananas||23.00
+Tonno|Thunfisch, Zwiebeln, Oliven, Kapern||24.00
+Quattro Stagioni|Pilze, Peperoni, Artischocken, Hinterschinken||24.00
+Roma|Salami, Pilze, Tonno, Knoblauch||24.00
+Capricciosa|Ei, Hinterschinken, Pilze||24.00
+Mona Lisa|Meeresfrüchte, Rucola, Cherrytomaten||24.00
+Napoli|Kapern, Sardellen, Oliven||24.00
+Svizzera|Hinterschinken, scharfe Salami, Speck||25.00`],
+["pide","Pide","inkl. Mozzarella",`Klassiker Style|||16.00
+Vegetable Style|überbackenes Gemüse||18.00
+Swiss Style|Raclette, Champignons, Kräuter||19.50
+Turkish Style|Sucuk||19.50
+Kebab Style|Hackfleisch, Peperoni, Petersilie, Zwiebeln||22.00
+Brüg Style|Spinat, Ei, Hinterschinken||22.00
+Neumarkt Style|Scharfe Salami||22.00`],
+["burger","Burger","Kleine Portion Pommes frites + CHF 5.–",`Garden Burger|Rindfleisch, Pesto, Gemüse, Mozzarella||17.00
+Classic Burger|Rindfleisch-Patty, Tomaten, Essiggurken, Käse, Saucen||14.00
+Neumarkt Burger|200 g Rindfleisch-Patty, Salat, Zwiebeln, Tomaten, Essiggurken, Cheddar, Speck||22.00`],
+["crepe-suess","Crêpe süss","",`Classic|Zimt, Zucker||9.90
+Casanova|Rohrzucker, Zimt, Zucker||9.90
+Pomme & Karamell|Apfelmus, Karamell||11.90
+Compani|Apfelmus, Zimt, Zucker||12.90
+La Chocolat|Schokolade||12.90
+La Choco & Banane|Schokolade, Banane||13.90
+La Mövenpick|Glace, Zucker||14.90
+Banana Split|Schokolade, Banane, Glace||15.90`],
+["crepe-salzig","Crêpe salzig","",`La Sanra|Ziegenkäse, Honig, Walnüsse||15.90
+La Martina|Tomatensauce, Ziegenkäse, Kräuter||15.90
+Jambon|Schinken, Mozzarella||15.90
+Calabrese|Paprikasauce, Mozzarella, scharfe Salami||17.90
+La Parisienne|Ei, Schinken, Mozzarella, Kräuter||18.90
+Fromage|Ei, Mozzarella, Kräuter||15.90
+La Mamma|Tomatensauce, Mozzarella, Ziegenkäse, Schnittlauch||14.90`],
+["kinder","Für unsere kleinen Gäste","",`Kinder Chicken Nuggets mit Pommes frites|& Stück||11.00
+Kinder Pasta mit Tomatensauce|||11.00
+Pizza Bambino|||11.00`],
+["getraenke","Erfrischende Getränke","",`Coca-Cola|Original Taste / Zero Zucker|33 cl|5.50
+Valser|Prickelnd / Still|33 cl|5.50
+Fanta|Orange|33 cl|5.50
+Sprite||33 cl|5.50
+Fusetea|Lemon Lemongrass / Peach Hibiscus|33 cl|5.50
+Lurisia Sodas||27,5 cl|7.50
+Kinley|Tonic Water / Bitter Lemon|20 cl|7.50
+Hausgemachte Limonade||30 cl|9.00
+Hausgemachter Minz-Tee||50 cl|8.50
+Apfelschorle||30 cl|6.00
+Red Bull||25 cl|6.00
+San Bitter||10 cl|5.00
+Orangensaft||20 cl|6.00`],
+["cognac","Cognac","",`Sambuca||4 cl · 42%|8.50
+Vecchia Romagna||4 cl · 38%|8.50
+Cognac Rémy Martin||4 cl · 40%|8.50
+Calvados||4 cl · 40%|8.50
+Williams||4 cl · 43%|8.50
+Grand Marnier||4 cl · 40%|8.50
+Baileys||4 cl · 18%|8.50`],
+["spirituosen","Spirituosen","",`Whisky Ballantine's||4 cl · 40%|10.50
+Whisky Jack Daniel's||4 cl · 40%|12.00
+Gin Gordon's||4 cl · 37,5%|10.50
+Gin Hendrick's||4 cl · 41,4%|13.50
+Vodka Absolut||4 cl · 40%|11.00`]
+];
+const A=document.getElementById("app"),N=document.getElementById("nav");
+A.innerHTML=S.map(([id,t,n,l])=>`<section id="${id}"><h2>${t}</h2><div class="rule"><svg aria-hidden="true"><use href="#ol"/></svg></div>${n?`<p class="note">${n}</p>`:""}${l.split("\n").map(r=>{const[a,b,c,d]=r.split("|");return `<div class="it"><div><b>${a}</b>${b?`<small>${b}</small>`:""}</div><span class="m">${c||""}</span><span class="p">${d}</span></div>`}).join("")}</section>`).join("");
+N.innerHTML=S.map(([id,t])=>`<a href="#${id}">${t.replace("Für unsere kleinen Gäste","Kinder").replace("Erfrischende ","")}</a>`).join("");
+const L=[...N.children];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){L.forEach(a=>a.classList.toggle("on",a.hash==="#"+e.target.id));const a=N.querySelector(".on");if(a)N.scrollTo({left:a.offsetLeft-20,behavior:"smooth"})}}),{rootMargin:"-30% 0px -65% 0px"});
+S.forEach(([id])=>io.observe(document.getElementById(id)));
+</script>
 </body>
 </html>
